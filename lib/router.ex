@@ -9,6 +9,7 @@ defmodule TfIdfWorker.Router do
         {:ok, data, _conn} = read_body(conn)
         data = Poison.decode!(data)
         result = "#{TfIdfWorker.tf(data["word"], data["text"])}"
+        :timer.sleep(5000)
         send_resp(conn, 200, result)
     end
 
@@ -16,6 +17,7 @@ defmodule TfIdfWorker.Router do
         {:ok, data, _conn} = read_body(conn)
         data = Poison.decode!(data)
         result = "#{TfIdfWorker.isInText(data["word"], data["text"])}"
+        :timer.sleep(5000)
         send_resp(conn, 200, result)
     end
 

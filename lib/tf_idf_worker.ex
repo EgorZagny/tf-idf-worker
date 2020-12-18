@@ -12,6 +12,10 @@ defmodule TfIdfWorker do
       :world
 
   """
+  def main(args \\ []) do
+    :timer.sleep(:infinity)
+  end
+
   def textToWords(text) do
     text = Base.decode64!(text) |> :erlang.binary_to_term([:safe])
     String.downcase(text)
