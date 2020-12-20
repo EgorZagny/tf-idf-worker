@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tf-idf-worker
+spec:
+  selector:
+    matchLabels:
+      app: tf-idf-worker
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: tf-idf-worker
+    spec:
+      containers:
+      - name: tf-idf-worker
+        image: tf_idf_worker
+        ports:
+        - containerPort: 4002
+        imagePullPolicy: Never
