@@ -4,12 +4,7 @@ defmodule TfIdfWorker do
   """
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> TfIdfWorker.hello()
-      :world
+  Worker of Tf-Idf.
 
   """
   def main(args \\ []) do
